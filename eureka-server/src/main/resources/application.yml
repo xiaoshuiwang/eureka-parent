@@ -1,11 +1,12 @@
 server:
   port: 8761
-
 eureka:
   instance:
-    hostname: localhost
+    hostname: eureka-server
   client:
-    register-with-eureka: false # �����������ó�false
-    fetch-registry: false # �����������ó�false
+#    register-with-eureka: false # 单机模式
+#    fetch-registry: false #
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eureka-server1:7002/eureka/  # 该处可以写多个地址（英文逗号分隔），实现集群（即服务之间相互注册（复制），实现集群）
+  server:
+    enable-self-preservation: true # 开启eureka的自我保护机制（当该节点在某段时间丢失过多的客户端时，那么该节点不再注销任何微服务）

@@ -1,0 +1,10 @@
+server:
+  port: 7002
+eureka:
+  instance:
+    hostname: eureka-server1
+  client:
+    service-url:
+      defaultZone: http://eureka-server:7001/eureka/  # 该处可以写多个地址（英文逗号分隔），实现集群（即服务之间相互注册（复制），实现集群）
+  server:
+    enable-self-preservation: true  # 开启eureka的自我保护机制

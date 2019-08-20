@@ -6,4 +6,4 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eureka-server:7001/eureka/ # 注册的服务地址
