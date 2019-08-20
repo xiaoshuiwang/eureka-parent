@@ -13,8 +13,10 @@ public class CustomerController {
     @Autowired
     public RestTemplate restTemplate;
 
-    @GetMapping("service-customer")
+    @GetMapping("hello")
     public String queryCustomer(){
-        return restTemplate.getForEntity("http://service-prodvider:8762/query",String.class).getBody();
+        String respond = restTemplate.getForEntity("http://service-prodvider:8762/query",String.class).getBody();
+
+        return respond;
     }
 }
